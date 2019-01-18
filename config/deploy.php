@@ -61,9 +61,10 @@ return [
         'ready' => [
             'artisan:storage:link',
             'artisan:view:clear',
-            'artisan:cache:clear',
             'artisan:config:cache',
-            'fpm:reload',
+            'artisan:config:clear',
+            'artisan:cache:clear',
+            // 'fpm:reload',
             // 'artisan:migrate',
             // 'artisan:db:seed',
         ],
@@ -96,8 +97,8 @@ return [
     */
 
     'options' => [
-        'application' => env('APP_NAME', 'Laravel'),
-        'repository' => 'git@gitlab.com:mkhleel01/e-yamama.git',
+        'application' => env('APP_NAME', 'Yamamah'),
+        'repository' => 'git@github.com:mkhleel/e-yamamah.git',
     ],
 
     /*
