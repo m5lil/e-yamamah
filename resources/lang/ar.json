@@ -1,0 +1,88 @@
+{
+
+  "Merchants":  "حسابات التجار",
+  "Merchant Categories": "تصنيفات التجار",
+  "Merchant Contracts":  "التعاقدات",
+  "Wallets": "المحافظ",
+  "Areas":  "المناطق",
+  "SDKS": "بوابات الدفع",
+  "Services":  "الخدمات",
+  "Service Api Parameters": "مدخلات  الخدمات",
+  "Service Providers":  "مزودى الخدمات",
+  "Service Provider Categories": "تصنيفات الخدمات",
+  "Settlements":  "التسوية",
+  "Transactions": "العمليات",
+  "Commissions":  "العمولات",
+  "Tickets": "تذاكر الدعم",
+  "Ticket Categories":  "تصنيفات تذاكر الدعم",
+  "Logs": "تقارير",
+  "Service Apis":  "بوابة الخدمة",
+  "Devices,": "الأجهزه",
+
+  "Yamamah": "يمامه",
+  "ltr": "rtl",
+  "en": "ar",
+  "Staff": "الموظفين",
+  "Backend": "لوجة التحكم",
+  "Home": "الرئيسية",
+  "Settings": "الإعدادات",
+  "Create": "إضافه",
+  "Description": "الوصف...",
+  "Edit": "تعديل",
+  "Add New": "إضافة",
+  "Title": "العنوان",
+  "Edit Profile": "نعديل ملفك",
+  "Employees": "الموظفين",
+  "Transfer": "تحويل",
+  "Transaction": "العمليات",
+  "Wallet": "المحفظة",
+  "Provider": "مقدم الخدمة",
+  "Service": "الخدمة",
+
+
+  "Active": "مفعل",
+  "In-active": "غير مفعل",
+
+
+
+
+  "Enter Your Username": "إسم المستخدم",
+  "Enter Your Password": "كلمة المرور",
+  "Keep me SignIn": "تذكرنى",
+  "Sign In": "دخول",
+  "Not yet a member?": "لا تملك حسابا",
+  "Sign Up": "تسجيل جديد",
+  "Forgot password?": "نسيت كلمة المرور؟",
+
+
+
+  "Table Of ": "جدول الـ",
+
+  "Name": "الإسم",
+  "Username": "إسم المستخدم",
+  "Email": "البريد",
+  "Password": "كلمة السر",
+  "Confirm Password": "أعد كلمة السر",
+  "Roles": "مجموعة الصلاحيات",
+  "Last Login": "أخر دهول",
+  "Created at": "أنشء فى",
+  "Submit Form": "إعتمد",
+  "Cancel": "إلغاء",
+  "Add": "إضافة",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "end": "الأخير"
+}
