@@ -12,4 +12,13 @@ class ServiceApi extends BaseModel
         'name'   => 'required',
     ];
 
+    function getNameAttribute()
+    {
+        return __("merchant/services.{$this->service_type}");
+    }
+
+    public function parameters()
+    {
+        return $this->hasMany(ServiceApiParameters::class);
+    }
 }
