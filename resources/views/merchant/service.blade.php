@@ -5,6 +5,9 @@
 @endpush
 
 @section('content')
+    @foreach($service->apis as $api)
+        {{ $api->name }}
+    @endforeach
 @endsection
 
 @push('scripts')
