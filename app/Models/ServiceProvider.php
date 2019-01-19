@@ -33,7 +33,8 @@ class ServiceProvider extends BaseModel
 
     public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany(Service::class)
+                    ->orderBy('order','asc');
     }
 
     protected static $rules = [
