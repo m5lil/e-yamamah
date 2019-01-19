@@ -2,14 +2,14 @@
 
 if (!function_exists('service_menu')) {
     function service_menu(){
-        $cats = \App\Models\ServiceProviderCategory::select('id', 'name', 'order')->orderBy('order','asc')->get();
+        $cats = \App\Models\ServiceProviderCategory::select('id', 'name', 'order')->get();
         foreach ($cats as $value){
             $providers = $value->service_providers()->select('id', 'name', 'order')->orderBy('order','asc')->get();
-            foreach ($providers as $provider){
-                $services[] = ['id' => $provider->id,'name' => $provider->name, 'services' => $provider->services()->select('id', 'name', 'order')->orderBy('order', 'asc')->get()->toArray()];
-            }
-            $data[] = ['name' => $value->name,'order' => $value->order,'providers' => @$services];
             $services = [];
+            foreach ($providers as $provider){
+                $services[] = ['id' => $provider->id,'name' => $provider->name, 'services' => $provider->services()->select('id', 'name', 'order')->get()->toArray()];
+            }
+            $data[] = ['name' => $value->name,'order' => $value->order,'providers' => $services];
         }
         $providers_without_cat = \App\Models\ServiceProvider::select('id', 'name', 'order')->where('service_provider_category_id',0)->get();
         foreach ($providers_without_cat as $value){
