@@ -36,6 +36,10 @@ class Service extends BaseModel
             ->where('status', '=', 1);
     }
 
+    public function apis()
+    {
+        return $this->hasMany(ServiceApi::class);
+    }
 
     public function sdk()
     {
