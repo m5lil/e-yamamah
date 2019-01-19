@@ -30,7 +30,8 @@ class ServiceProviderCategory extends BaseModel
 
     public function service_providers()
     {
-        return $this->hasMany(ServiceProvider::class, 'service_provider_category_id');
+        return $this->hasMany(ServiceProvider::class, 'service_provider_category_id')
+                    ->orderBy('order','asc');
     }
 
 }
