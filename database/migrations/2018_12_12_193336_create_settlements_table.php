@@ -16,7 +16,7 @@ class CreateSettlementsTable extends Migration
         Schema::create('settlements', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('wallet_id');
-            $table->enum('status', array('processing','error','done'))->default('processing');
+            $table->enum('status', array('pending','error','done'))->default('pending');
             $table->unsignedInteger('reseller_wallet_id');
             $table->float('system_commission', 10, 0);
             $table->float('merchant_commission', 10, 0);

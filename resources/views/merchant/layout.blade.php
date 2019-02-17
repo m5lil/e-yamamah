@@ -55,7 +55,6 @@
                     container: '.second-container',
                 });
             });
-
             $(document).on('pjax:send', function() {
                 $('#pjax-container').addClass('loading')
                 NProgress.start();

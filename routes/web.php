@@ -1,6 +1,8 @@
 <?php
 
+Auth::routes();
 Route::get('/', function () {
+    phpinfo();
     return view('website.home');
 });
 

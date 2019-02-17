@@ -12,4 +12,10 @@ class ServiceApiParameters extends BaseModel
         'name'   => 'required',
     ];
 
+    function getNameAttribute()
+    {
+        return json_decode($this->attributes['name'], true)[app()->getLocale()];
+    }
+
+
 }

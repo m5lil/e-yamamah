@@ -47,6 +47,13 @@ class Service extends BaseModel
         return $this->belongsTo(ServiceProvider::class);
     }
 
+    public function service_api()
+    {
+        return $this->hasMany(ServiceApi::class);
+    }
+
+
+
     protected static $rules = [
         'name'   => 'required',
     ];

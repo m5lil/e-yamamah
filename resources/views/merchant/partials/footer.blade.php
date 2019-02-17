@@ -9,6 +9,7 @@
 <script src="{{ URL::to('backend/js/nprogress.js') }}"></script>
 <script src="{{ URL::to('backend/js/loadjs.min.js') }}"></script>
 <script src="{{ URL::to('backend/js/loadCSS.js') }}"></script>
+<script src="{{ URL::to('js/jquery.numpad.js') }}"></script>
 <div class="second-container">
     @stack('scripts')
 </div>

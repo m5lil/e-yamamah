@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Libs;
+namespace App\Libs\Adapters;
+
+use Illuminate\Support\Facades\Auth;
 
 trait AdapterTrait
 {
@@ -14,15 +16,17 @@ trait AdapterTrait
         ];
     }
 
-    private static function createPaymentTransaction($service_id, $amount, $totalAmount, $external_key, $serviceType){
+    private static function createPaymentTransaction($service_id, $serviceType, $request_map, $external_id = null,$response_msg){
+//        dd($request_map);
         return Auth::user()->PaymentTransactions()->create([
-            'payment_services_id'=> $service_id,
-            'amount'=> $amount,
-            'total_amount'=> $totalAmount,
-//            'request_map'=> Validator::$parametersToSDK,
-            'external_system_id'=> $external_key,
-            'service_type'=> $serviceType,
-            'ip' => getRealIP()
+            'service_id'=> $service_id,
+            'total_amount'=> 0,
+            'amount'=> $request_map['additional']['amount'],
+            'request_map'=> $request_map,
+            'external_id'=> $external_id,
+            'response_type'=> $serviceType,
+            'response'=> $response_msg,
+            'ip' => request()->ip()
         ]);
     }
 

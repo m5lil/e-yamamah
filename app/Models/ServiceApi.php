@@ -12,4 +12,19 @@ class ServiceApi extends BaseModel
         'name'   => 'required',
     ];
 
+
+    public function service_api_pars()
+    {
+        return $this->hasMany(ServiceApiParameters::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+
+
+
+
 }

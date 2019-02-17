@@ -7,7 +7,7 @@ use App\Mail\WelcomeToMerchant;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
-use Spatie\Newsletter\Newsletter;
+use Newsletter;
 
 class SendWelcome
 {

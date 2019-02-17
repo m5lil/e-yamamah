@@ -25,6 +25,7 @@ class CreateServiceApiParametersTable extends Migration
             $table->string('default_value', 25);
             $table->integer('min_length');
             $table->integer('max_length');
+            $table->string('pattern')->nullable();
 
             $table->foreign('service_api_id')->references('id')->on('service_apis');
             $table->timestamps();

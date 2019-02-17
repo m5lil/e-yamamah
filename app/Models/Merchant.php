@@ -8,14 +8,15 @@ use Illuminate\Notifications\Notifiable;
 //use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
+use Spatie\Activitylog\Traits\CausesActivity;
 
 class Merchant extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable, CausesActivity;
 
     protected $guard_name = 'merchant';
     public $table = "merchants";
-    protected $dates = ['deleted_at','last_login_at'];
+    protected $dates = ['deleted_at', 'last_login_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +28,8 @@ class Merchant extends Authenticatable
         'name', 'email', 'phone', 'username', 'password', 'status', 'wallet_id', 'merchant_contract_id', 'change_password', 'language_key', 'verified_at', 'last_login_at', 'last_login_ip',
     ];
 
-    public function setPasswordAttribute( $value ) {
+    public function setPasswordAttribute($value)
+    {
         if ($value)
             if (\Hash::needsRehash($value))
                 $value = \Hash::make($value);
@@ -48,8 +50,8 @@ class Merchant extends Authenticatable
         parent::boot();
         self::creating(function ($model) {
             $model->username = '1' . str_pad(MerchantContract::find($model->merchant_contract_id)->area_id, 2, 0, STR_PAD_LEFT)
-                . ($model->latest()->first()->id + 1);
-            session(['password' => rand(111111,999999)]);
+                . (@$model->latest()->first()->id + 1);
+            session(['password' => rand(111111, 999999)]);
             $model->password = session()->get('password');
             $model->change_password = 1;
             if ($model->status == 1)
@@ -70,15 +72,22 @@ class Merchant extends Authenticatable
 
     public function wallet()
     {
-        return $this->belongsTo('App\Model\Wallet', 'merchant_id');
-    }
-    public function merchant_contract()
-    {
-        return $this->belongsTo('App\Model\MerchantContract', 'merchant_contract_id');
-    }
-    public function logs(){
-        return $this->morphMany('App\Model\Log','loggable');
+        return $this->belongsTo('App\Models\Wallet', 'merchant_id');
     }
 
+    public function merchant_contract()
+    {
+        return $this->belongsTo('App\Models\MerchantContract', 'merchant_contract_id');
+    }
+
+    public function logs()
+    {
+        return $this->morphMany('App\Models\Log', 'loggable');
+    }
+
+    public function PaymentTransactions()
+    {
+        return $this->morphMany('App\Models\Transaction', 'model');
+    }
 
 }

@@ -160,27 +160,27 @@
         console.log("Date changed: ", e.target.value);
     });
   }
+     // custom scrollbar style
+     new PerfectScrollbar('.sideleft-scrollbar', {
+         suppressScrollX: true
+     });
 
-  // custom scrollbar style
-  new PerfectScrollbar('.sideleft-scrollbar', {
-    suppressScrollX: true
-  });
+     new PerfectScrollbar('.contact-scrollbar', {
+         suppressScrollX: true
+     });
 
-  new PerfectScrollbar('.contact-scrollbar', {
-    suppressScrollX: true
-  });
+     new PerfectScrollbar('.attachment-scrollbar', {
+         suppressScrollX: true
+     });
 
-  new PerfectScrollbar('.attachment-scrollbar', {
-    suppressScrollX: true
-  });
+     new PerfectScrollbar('.schedule-scrollbar', {
+         suppressScrollX: true
+     });
 
-  new PerfectScrollbar('.schedule-scrollbar', {
-    suppressScrollX: true
-  });
+     new PerfectScrollbar('.settings-scrollbar', {
+         suppressScrollX: true
+     });
 
-  new PerfectScrollbar('.settings-scrollbar', {
-    suppressScrollX: true
-  });
 
   // jquery ui datepicker
   $('.datepicker').datepicker();

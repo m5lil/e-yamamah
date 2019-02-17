@@ -4,27 +4,30 @@
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
         <div class="input-group hidden-xs-down wd-170 transition">
-            <input id="searchbox" type="text" class="form-control" placeholder="Search">
+            <input id="searchbox" type="text" class="form-control tx-11" placeholder="@lang('Search for Transactions')">
             <span class="input-group-btn">
             <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
           </span>
         </div><!-- input-group -->
         <nav class="nav">
             <div class="dropdown">
-                <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-                    <span class="logged-name hidden-md-down mt-3"><i class="fa fa-cog"></i> @lang('Settings')</span>
-                    {{--<img src="img/img1.jpg" class="wd-32 rounded-circle" alt="">--}}
-                    {{--<span class="square-10 bg-success"></span>--}}
+                <a href="" class="nav-link nav-link-profile  mg-t-10" data-toggle="dropdown">
+                    <span class="logged-name hidden-md-down"><i class="fa fa-cog"></i> @lang('Settings')</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-header wd-250">
+                <div class="dropdown-menu dropdown-menu-header wd-250 ">
                     <ul class="list-unstyled user-profile-nav">
-                        <li><a href=""><i class="icon ion-ios-gear"></i> @lang('Employees')</a></li>
-                        <li><a href=""><i class="icon ion-ios-download"></i> @lang('Transfer')</a></li>
-                        <li><a href=""><i class="icon ion-ios-star"></i> @lang('Transaction')</a></li>
-                        <li><a href=""><i class="icon ion-ios-folder"></i> @lang('Wallet')</a></li>
+                        <li><a href=""><i class="fa fa-users"></i> @lang('Employees')</a></li>
+                        <li><a href=""><i class="fa fa-wallet"></i> @lang('Wallet')</a></li>
                     </ul>
                 </div><!-- dropdown-menu -->
             </div><!-- dropdown -->
+            <a href="#" class="nav-link nav-link-profile  mg-t-10">
+                <span class="logged-name hidden-md-down"><i class="fa fa-wallet"></i> @lang('Transaction')</span>
+            </a>
+            <a href="#" class="nav-link nav-link-profile  mg-t-10">
+                <span class="logged-name hidden-md-down"><i class="fa fa-wallet"></i> @lang('Transfer')</span>
+            </a>
+
         </nav>
 
     </div><!-- br-header-left -->

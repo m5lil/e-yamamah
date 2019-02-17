@@ -15,13 +15,13 @@ interface PaymentInterface{
      * @param array $requestMap
      * @return mixed
      */
-    public static function inquiry(array $requestMap);
+    public static function inquiry($service, array $requestMap);
 
     /**
      * @param array $requestMap
      * @return mixed
      */
-    public static function payment(array $requestMap);
+    public static function payment($service, array $requestMap);
 
 
 }
